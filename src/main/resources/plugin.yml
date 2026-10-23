@@ -3,7 +3,7 @@ version: '${project.version}'
 main: dev.bjunior.bcore.BCorePlugin
 api-version: '26.2'
 authors: [Bjunior]
-description: Core ekonomi dan pondasi event engine (Paper 1.21+/26.x, Java 25)
+description: Core ekonomi, modul server, dan event engine untuk Paper 26.3 (Java 25)
 website: https://github.com/Bjunior-dev/BCore
 
 commands:
@@ -23,13 +23,174 @@ commands:
     permission: bcore.eco.admin
     usage: /eco <give|take|set|reset|reload> [player] [jumlah]
   bcore:
-    description: Info dan reload plugin
-    usage: /bcore [version|reload]
+    description: Info, reload, dan status modul
+    usage: /bcore [version|reload|modules]
+
+  sethome:
+    description: Simpan home
+    permission: bcore.homes
+    usage: /sethome [nama]
+  delhome:
+    description: Hapus home
+    permission: bcore.homes
+    usage: /delhome <nama>
+  home:
+    description: Teleport ke home
+    permission: bcore.homes
+    usage: /home [nama]
+  homes:
+    description: Daftar home
+    permission: bcore.homes
+    usage: /homes
+
+  tpa:
+    description: Minta teleport ke pemain lain
+    permission: bcore.tpa
+    usage: /tpa <player>
+  tpahere:
+    description: Minta pemain lain teleport ke kamu
+    permission: bcore.tpa
+    usage: /tpahere <player>
+  tpaccept:
+    description: Terima permintaan teleport
+    aliases: [tpyes]
+    permission: bcore.tpa
+    usage: /tpaccept
+  tpdeny:
+    description: Tolak permintaan teleport
+    aliases: [tpno]
+    permission: bcore.tpa
+    usage: /tpdeny
+
+  spawn:
+    description: Teleport ke spawn
+    permission: bcore.spawn
+    usage: /spawn
+  setspawn:
+    description: Set titik spawn
+    permission: bcore.spawn.admin
+    usage: /setspawn
+
+  warp:
+    description: Teleport ke warp
+    permission: bcore.warps
+    usage: /warp <nama>
+  warps:
+    description: Daftar warp
+    permission: bcore.warps
+    usage: /warps
+  setwarp:
+    description: Buat warp
+    permission: bcore.warps.admin
+    usage: /setwarp <nama>
+  delwarp:
+    description: Hapus warp
+    permission: bcore.warps.admin
+    usage: /delwarp <nama>
+
+  rtp:
+    description: Teleport acak ke dunia ini
+    aliases: [wild]
+    permission: bcore.rtp
+    usage: /rtp
+
+  afk:
+    description: Tandai diri AFK
+    usage: /afk
+
+  clearlag:
+    description: Bersihkan item & mob
+    permission: bcore.admin
+    usage: /clearlag [items|mobs|all]
+
+  combat:
+    description: Cek status combat
+    usage: /combat
+
+  bounty:
+    description: Pasang atau lihat bounty
+    usage: /bounty <player> <jumlah> | /bounty list
+
+  shards:
+    description: Cek dan kirim shard
+    usage: /shards [player] | /shards pay <player> <jumlah>
+
+  stats:
+    description: Statistik pemain
+    usage: /stats [player]
+
+  lb:
+    description: Papan peringkat
+    aliases: [leaderboard]
+    usage: /lb <money|shards|kills|blocks|playtime>
+
+  settings:
+    description: Preferensi pribadi
+    usage: /settings | /settings toggle <fly|nv|scoreboard|tpa|pay>
+
+  ah:
+    description: Auction house
+    aliases: [auction]
+    usage: /ah [sell <harga>]
+
+  duel:
+    description: Tantang pemain lain
+    usage: /duel <player> [taruhan] | /duel accept|deny
+
+  koth:
+    description: King of the Hill
+    permission: bcore.events.admin
+    usage: /koth <set|start|stop|status> [detik]
+
+  hotpotato:
+    description: Event hot potato
+    permission: bcore.events.admin
+    usage: /hotpotato <start|stop> [detik]
+
+  tourney:
+    description: Turnamen 1v1
+    permission: bcore.events.admin
+    usage: /tourney <create|join|leave|start|stop|info|setarena> [nama]
 
 permissions:
+  bcore.admin:
+    description: Akses admin penuh
+    default: op
+    children:
+      bcore.eco.admin: true
+      bcore.spawn.admin: true
+      bcore.warps.admin: true
+      bcore.events.admin: true
   bcore.eco.admin:
-    description: Akses admin ekonomi dan reload
+    description: Admin ekonomi dan reload
     default: op
   bcore.balance.others:
     description: Boleh melihat saldo pemain lain
+    default: op
+  bcore.spawn:
+    description: Akses /spawn
+    default: true
+  bcore.spawn.admin:
+    description: Set spawn
+    default: op
+  bcore.warps:
+    description: Akses warp
+    default: true
+  bcore.warps.admin:
+    description: Kelola warp
+    default: op
+  bcore.homes:
+    description: Akses sistem home
+    default: true
+  bcore.tpa:
+    description: Akses sistem tpa
+    default: true
+  bcore.rtp:
+    description: Akses random teleport
+    default: true
+  bcore.settings.fly:
+    description: Boleh toggle fly
+    default: op
+  bcore.events.admin:
+    description: Jalankan event
     default: op
