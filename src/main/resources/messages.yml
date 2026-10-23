@@ -1,0 +1,175 @@
+# ==============================================================================
+#                            BCore - Messages
+# ==============================================================================
+# Semua pesan plugin. Kode warna pakai '&'. Placeholder pakai {nama}.
+# ==============================================================================
+
+prefix: "&8[&bBCore&8] &r"
+
+general:
+  no-permission: "&cKamu tidak punya izin untuk ini."
+  player-only: "&cCommand ini hanya untuk pemain."
+  player-not-found: "&cPemain &e{player} &ctidak ditemukan."
+  invalid-number: "&cAngka tidak valid: &e{input}"
+  unknown-command: "&cSub-command tidak dikenal. Pakai &e/help&c."
+  reloaded: "&aKonfigurasi BCore dimuat ulang."
+
+economy:
+  balance-self: "&7Saldo kamu: &a{balance}"
+  balance-other: "&7Saldo &e{player}&7: &a{balance}"
+  pay-usage: "&7Pakai: &e/pay <player> <jumlah>"
+  pay-self: "&cTidak bisa membayar diri sendiri."
+  pay-disabled: "&cTarget menonaktifkan pembayaran masuk."
+  pay-success: "&aKamu mengirim &e{amount} &ake &e{player}&a. Sisa: &a{balance}"
+  pay-received: "&aKamu menerima &e{amount} &adari &e{player}&a."
+  pay-insufficient: "&cSaldo tidak cukup. Saldo kamu: &e{balance}"
+  pay-min: "&cMinimal transfer &e{min}&c."
+  baltop-header: "&8&m-----&r &bTop Saldo &8&m-----"
+  baltop-entry: "&e#{rank} &f{player} &8- &a{balance}"
+  baltop-empty: "&7Belum ada data saldo."
+  eco-usage: "&7Pakai: &e/eco <give|take|set|reset|reload> [player] [jumlah]"
+  eco-done: "&aSaldo &e{player} &asekarang: &a{balance}"
+  eco-reset-all: "&aSemua saldo direset ({amount} akun)."
+
+pay-setting:
+  toggled-off: "&cPembayaran masuk dinonaktifkan."
+  toggled-on: "&aPembayaran masuk diaktifkan."
+
+teleport:
+  countdown: "&7Teleport ke &e{target} &7dalam &e{time}s&7."
+  done: "&aTeleport ke &e{target}&a."
+  moved: "&cTeleport dibatalkan karena kamu bergerak."
+  combat: "&cTidak bisa teleport saat sedang combat."
+  cancelled: "&7Teleport dibatalkan."
+
+homes:
+  set: "&aHome &e{home} &adisimpan."
+  deleted: "&aHome &e{home} &adihapus."
+  not-found: "&cHome &e{home} &ctidak ada."
+  limit: "&cBatas home kamu &e{max}&c. Hapus dulu dengan &e/delhome <nama>&c."
+  list-header: "&8&m-----&r &bHome Kamu &8&m-----"
+  list-empty: "&7Belum ada home. Buat dengan &e/sethome <nama>&7."
+  world-blocked: "&cTidak bisa memakai home di dunia ini."
+  usage: "&7Pakai: &e/home <nama>"
+
+tpa:
+  sent: "&aPermintaan teleport dikirim ke &e{player}&a."
+  received: "&e{player} &7ingin teleport ke kamu. &a/tpaccept &7atau &c/tpdeny"
+  received-here: "&e{player} &7ingin kamu teleport ke dia. &a/tpaccept &7atau &c/tpdeny"
+  none: "&cTidak ada permintaan teleport."
+  accepted: "&aPermintaan diterima."
+  denied: "&cPermintaan ditolak."
+  target-offline: "&cPemain sudah offline."
+  cooldown: "&cTunggu &e{time}s &csebelum mengirim permintaan lagi."
+  self: "&cTidak bisa mengirim ke diri sendiri."
+  cancelled: "&7Permintaan dibatalkan."
+  usage: "&7Pakai: &e/tpa <player> &7atau &e/tpahere <player>"
+
+spawn:
+  set: "&aSpawn server diset di lokasi ini."
+  not-set: "&cSpawn belum diset. Minta admin pakai &e/setspawn&c."
+  teleported: "&aKamu teleport ke spawn."
+  usage: "&7Pakai: &e/spawn [set]"
+
+warps:
+  set: "&aWarp &e{name} &adibuat."
+  deleted: "&aWarp &e{name} &adihapus."
+  not-found: "&cWarp &e{name} &ctidak ada."
+  list-header: "&8&m-----&r &bDaftar Warp &8&m-----"
+  list-entry: "&e- {name}"
+  list-empty: "&7Belum ada warp."
+  teleported: "&aKamu teleport ke warp &e{name}&a."
+
+rtp:
+  searching: "&7Mencari lokasi aman..."
+  done: "&aKamu teleport ke lokasi acak."
+  failed: "&cGagal menemukan lokasi aman. Coba lagi."
+  cooldown: "&cTunggu &e{time}s &clagi."
+  world-blocked: "&cRTP tidak tersedia di dunia ini."
+
+afk:
+  now-afk: "&7Kamu sekarang AFK."
+  back: "&aKamu kembali dari AFK."
+  broadcast-afk: "&e{player} &7sekarang AFK."
+  broadcast-back: "&e{player} &7kembali."
+
+combat:
+  tagged: "&cKamu masuk combat (&e{time}s&c). Jangan logout!"
+  ended: "&aKamu keluar dari combat."
+  command-blocked: "&cCommand ini diblokir saat combat."
+  logout-death: "&c{player} logout saat combat dan mati."
+  actionbar: "&cCombat &8» &f{time}s"
+
+clearlag:
+  cleaned: "&aMembersihkan &e{count} &aitem dari &e{worlds} &adunia."
+  warning: "&eClearLag dalam &c{time}s&e. Item di tanah akan dihapus."
+  broadcast: "&8[&bClearLag&8] &7{count} item dihapus."
+
+bounty:
+  placed: "&aBounty &e{amount} &adipasang untuk &e{player}&a."
+  increased: "&aBounty &e{player} &anaik jadi &e{amount}&a."
+  insufficient: "&cSaldo tidak cukup. Butuh &e{amount}&c."
+  self: "&cTidak bisa memasang bounty untuk diri sendiri."
+  min: "&cMinimal bounty &e{min}&c."
+  removed: "&aBounty untuk &e{player} &adihapus."
+  none: "&7Tidak ada bounty aktif."
+  list-header: "&8&m-----&r &bBounty &8&m-----"
+  list-entry: "&e{player} &8- &a{amount}"
+  claimed: "&aKamu mendapat bounty &e{amount} &adari &e{player}&a."
+  killed: "&cKamu terbunuh dan bounty &e{amount} &c diambil &e{killer}&c."
+  usage: "&7Pakai: &e/bounty <player> <amount>&7, &e/bounty list&7, &e/bounty remove <player>"
+
+shards:
+  self: "&7Shards kamu: &b{shards}"
+  other: "&7Shards &e{player}&7: &b{shards}"
+  gained: "&b+{amount} shards &7({reason})"
+
+stats:
+  header: "&8&m-----&r &bStats &e{player} &8&m-----"
+  line-kills: "&7Kills: &f{kills}"
+  line-deaths: "&7Deaths: &f{deaths}"
+  line-kdr: "&7K/D: &f{kdr}"
+  line-blocks: "&7Block break/place: &f{broken}&7/&f{placed}"
+  line-playtime: "&7Playtime: &f{playtime}"
+  line-joins: "&7Joins: &f{joins}"
+  line-shards: "&7Shards: &b{shards}"
+
+leaderboard:
+  header: "&8&m-----&r &bTop {type} &8&m-----"
+  entry: "&e#{rank} &f{name} &8- &a{value}"
+  empty: "&7Belum ada data."
+  types: "&7Tipe: &ebalance, shards, kills, deaths, blocks, playtime"
+
+settings:
+  title: "&8Pengaturan"
+  toggled: "&a{option} &7sekarang &e{state}&a."
+  fly-on: "&aFly diaktifkan."
+  fly-off: "&cFly dinonaktifkan."
+
+chat:
+  paused: "&cChat sedang dijeda."
+  muted: "&cKamu dibisukan."
+  msg-usage: "&7Pakai: &e/msg <player> <pesan>"
+  msg-out: "&7[&bKamu &7→ &e{player}&7] &f{message}"
+  msg-in: "&7[&e{player} &7→ &bKamu&7] &f{message}"
+  reply-none: "&cBelum ada lawan bicara."
+
+auction:
+  title: "&8Auction House"
+  listed: "&aItem kamu dijual seharga &e{price}&a."
+  sold: "&aTerjual: &e{item} &ake &e{buyer} &aseharga &a{price}&a."
+  seller-received: "&aItem &e{item} &aterjual. Kamu dapat &a{price}&a."
+  bought: "&aKamu membeli &e{item} &aseharga &a{price}&a."
+  insufficient: "&cSaldo tidak cukup. Harga: &e{price}"
+  own-item: "&cIni item kamu sendiri."
+  not-held: "&cPegang item yang mau dijual."
+  disabled-item: "&cItem ini tidak bisa dijual."
+  limit: "&cBatas listing kamu &e{max}&c."
+  max-price: "&cHarga maksimal &e{max}&c."
+  usage: "&7Pakai: &e/ah &7(buka), &e/ah sell <harga>&7, &e/ah expired&7, &e/ah cancel <id>"
+  empty: "&7Belum ada item dijual."
+  expired-title: "&8Item kedaluwarsa"
+  expired-none: "&7Tidak ada item kedaluwarsa."
+  cancelled: "&aListing &e{id} &adibatalkan."
+  not-yours: "&cListing ini bukan milikmu."
+  inventory-full: "&cInventory penuh."
