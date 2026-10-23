@@ -53,6 +53,10 @@ public final class EcoService {
                 DecimalFormatSymbols.getInstance(Locale.US));
     }
 
+    public boolean autoCreateEnabled() {
+        return autoCreate;
+    }
+
     public void load() {
         balances.clear();
         lastKnownName.clear();
