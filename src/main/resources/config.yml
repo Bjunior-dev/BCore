@@ -1,17 +1,165 @@
-# BCore 0.1.0 - konfigurasi ekonomi
-economy:
-  # Saldo awal untuk akun baru
-  starting-balance: 0.0
-  # Batas saldo maksimum per akun
-  max-balance: 1000000000000.0
-  # Buat akun otomatis saat pemain pertama kali dicek / join
-  auto-create: true
+# ==============================================================================
+#                           BCore - General Configuration
+# ==============================================================================
+# Pusat konfigurasi: properti server, switchboard modul, ekonomi dasar, combat,
+# chat, dan utilitas. Pesan ada di messages.yml.
+# ==============================================================================
 
-format:
-  currency: "$"
-  # Pola DecimalFormat
-  pattern: "#,##0.##"
+SERVER:
+  NAME: "BCore Server"
+  AUTOSAVE-MINUTES: 5
 
-storage:
-  # Interval autosave ke balances.yml (detik)
-  save-interval-seconds: 300
+# Switchboard modul. false = modul tidak diaktifkan saat start.
+MODULES:
+  ECONOMY: true
+  HOMES: true
+  TPA: true
+  SPAWN: true
+  WARPS: true
+  RTP: true
+  AFK: true
+  CLEARLAG: true
+  COMBAT: true
+  BOUNTY: true
+  SHARDS: true
+  STATS: true
+  LEADERBOARD: true
+  SETTINGS: true
+  CHAT: true
+  AUCTION: true
+
+ECONOMY:
+  AUTO-CREATE: true
+  STARTING-BALANCE: 0.0
+  MAX-BALANCE: 1000000000000.0
+  CURRENCY:
+    SYMBOL: "$"
+    FORMAT: "#,##0.00"
+
+FORMAT:
+  CURRENCY: "$"
+  PATTERN: "#,##0.00"
+
+STORAGE:
+  SAVE-INTERVAL-SECONDS: 300
+
+TELEPORTATION:
+  COUNTDOWN-SECONDS: 5
+  CANCEL-ON-MOVE: true
+  RADIUS-MOVEMENT: 0.5
+  CANCEL-ON-DAMAGE: true
+  CANCEL-ON-COMBAT: true
+
+COMBAT:
+  ENABLED: true
+  DURATION-SECONDS: 20
+  ACTIONBAR-ENABLED: true
+  BLOCK-TELEPORT: true
+  LOGOUT-DEATH:
+    ENABLED: true
+    SHOW-TITLE: true
+  COMMAND-BLOCKING:
+    ENABLED: true
+    BYPASS-COMMANDS:
+      - shop
+      - ah
+      - sell
+      - help
+      - rules
+      - discord
+      - vote
+      - msg
+      - r
+      - reply
+      - tell
+      - w
+      - whisper
+
+CLEARLAG:
+  ENABLED: true
+  INTERVAL-SECONDS: 300
+  WARNING-INTERVALS:
+    - 60
+    - 30
+    - 15
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+  BLACKLISTED-ITEMS: []
+
+HOMES:
+  MAX: 5
+  ENABLED-WORLDS: []
+
+TPA:
+  TIMEOUT-SECONDS: 60
+  COOLDOWN-SECONDS: 10
+
+SPAWN:
+  TELEPORT-ON-FIRST-JOIN: true
+
+WARPS:
+  PERMISSION-REQUIRED: false
+
+RTP:
+  MIN-RANGE: 200
+  MAX-RANGE: 2000
+  ATTEMPTS: 25
+  COOLDOWN-SECONDS: 60
+  ENABLED-WORLDS:
+    - world
+  DISABLED-WORLDS:
+    - spawn
+    - world_nether
+    - world_the_end
+
+AFK:
+  IDLE-SECONDS: 300
+  KICK: false
+  BROADCAST: true
+
+BOUNTY:
+  MINIMUM: 1.0
+  MAXIMUM: -1.0
+  ALLOW-SELF: false
+  PRICE-DECIMALS: 2
+
+SHARDS:
+  PER-MOB-KILL: 1
+  PER-PLAYER-KILL: 5
+  PER-BLOCK-BREAK: 0
+
+CHAT:
+  FORMAT: "&7{player}&8: &f{message}"
+  CHAT-PAUSE:
+    ENABLED: true
+  ANTI-SWEAR:
+    ENABLED: true
+    REPLACEMENT: "***"
+    WORDS:
+      - anjing
+      - anjir
+      - babi
+      - bangke
+      - bego
+      - kontol
+      - memek
+      - ngentot
+      - tai
+  MUTED-CAN-TALK: false
+
+AUCTION:
+  ITEM-TIME-SECONDS: 86400
+  MAX-LISTED-PER-PLAYER: 25
+  MAX-PRICE: 1000000000.0
+  PRICE-DECIMALS: 2
+  TAX-PERCENT: 0.0
+  DISABLED-ITEMS:
+    - BEDROCK
+    - SPAWNER
+    - BARRIER
+  EXPIRED-CLEANUP:
+    ENABLED: true
+    AFTER-DAYS: 90
