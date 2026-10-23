@@ -1,0 +1,17 @@
+# BCore 0.1.0 - konfigurasi ekonomi
+economy:
+  # Saldo awal untuk akun baru
+  starting-balance: 0.0
+  # Batas saldo maksimum per akun
+  max-balance: 1000000000000.0
+  # Buat akun otomatis saat pemain pertama kali dicek / join
+  auto-create: true
+
+format:
+  currency: "$"
+  # Pola DecimalFormat
+  pattern: "#,##0.##"
+
+storage:
+  # Interval autosave ke balances.yml (detik)
+  save-interval-seconds: 300
