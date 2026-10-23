@@ -1,0 +1,35 @@
+name: BCore
+version: '${project.version}'
+main: dev.bjunior.bcore.BCorePlugin
+api-version: '26.2'
+authors: [Bjunior]
+description: Core ekonomi dan pondasi event engine (Paper 1.21+/26.x, Java 25)
+website: https://github.com/Bjunior-dev/BCore
+
+commands:
+  balance:
+    description: Cek saldo sendiri atau pemain lain
+    aliases: [bal, money, saldo]
+    usage: /balance [player]
+  pay:
+    description: Kirim uang ke pemain lain
+    usage: /pay <player> <jumlah>
+  baltop:
+    description: Peringkat saldo teratas
+    aliases: [topbal, balancetop]
+    usage: /baltop
+  eco:
+    description: Admin ekonomi
+    permission: bcore.eco.admin
+    usage: /eco <give|take|set|reset|reload> [player] [jumlah]
+  bcore:
+    description: Info dan reload plugin
+    usage: /bcore [version|reload]
+
+permissions:
+  bcore.eco.admin:
+    description: Akses admin ekonomi dan reload
+    default: op
+  bcore.balance.others:
+    description: Boleh melihat saldo pemain lain
+    default: op
